@@ -45,6 +45,11 @@ public class TodoController {
         todoService.insert(new MyTodo( "notitle", "nodescription", TodoStatus.COMPLETED));
     }
 
+    @PostMapping("/update/{updateId}")
+    private void updateTodos(@PathVariable long updateId, @RequestBody MyTodo todo) {
+        todoService.updateTodo(updateId,new MyTodo( "notitle", "nodescription", TodoStatus.COMPLETED));
+    }
+
 }
 
 
