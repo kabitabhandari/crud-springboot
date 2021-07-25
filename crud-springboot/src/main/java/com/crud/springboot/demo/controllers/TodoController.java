@@ -35,15 +35,14 @@ public class TodoController {
         return new ResponseEntity(todoService.getTodoById(todoId), HttpStatus.OK);  /////////// why no <>??
     }
 
-//    @DeleteMapping("/delete/{id}")
-//    public void deleteTodo(@PathVariable long id) {
-//        return new ResponseEntity(todoService.deleteTodo(id), HttpStatus.OK);  /////////// why no <>??
-//
-//    }
+    @DeleteMapping("/delete/{id}")
+    public void deleteTodo(@PathVariable long id) {
+        todoService.deleteTodo(id);
+    }
 
     @PostMapping("/new")
-    private ResponseEntity insertTodos(@RequestBody MyTodo todo) {
-        return new ResponseEntity(todoService.insert(new MyTodo( "notitle", "nodescription", TodoStatus.COMPLETED)), HttpStatus.OK);
+    private void insertTodos(@RequestBody MyTodo todo) {
+        todoService.insert(new MyTodo( "notitle", "nodescription", TodoStatus.COMPLETED));
     }
 
 }
