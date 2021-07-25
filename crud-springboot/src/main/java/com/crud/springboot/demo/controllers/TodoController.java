@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1/kabita/todo")
 public class TodoController {
 
-   // @Autowired   /////////////////////////////////// why not???
+
     TodoService todoService;
 
     public TodoController(TodoService todoService) {
