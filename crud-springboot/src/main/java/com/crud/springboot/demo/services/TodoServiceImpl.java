@@ -23,8 +23,6 @@ public class TodoServiceImpl implements TodoService{
         List<MyTodo> todos = new ArrayList<>();
         //todoRepository.findAll().forEach((e1)->todos.add(e1));
         todoRepository.findAll().forEach(todos::add);
-
-
         return todos;
     }
 

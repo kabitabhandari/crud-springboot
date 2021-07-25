@@ -18,6 +18,11 @@ public class TodoLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         loadTodos();
+        insertTodos();
+    }
+
+    private void insertTodos() {
+        todoRepository.save(new MyTodo( "notitle", "nodescription", TodoStatus.COMPLETED));
     }
 
     private void loadTodos() {

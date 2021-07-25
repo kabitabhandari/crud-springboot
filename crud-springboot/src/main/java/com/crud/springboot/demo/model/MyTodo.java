@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "MY_TODO")
+@Entity
 public class MyTodo {
     @Id
     @GeneratedValue
@@ -38,6 +38,11 @@ public class MyTodo {
     @UpdateTimestamp
     private Timestamp lastModified;
 
+    public MyTodo(  String title, String description, TodoStatus todoStatus) {
+        this.title= title;
+        this.description = description;
+        this.todoStatus = todoStatus;
+    }
 }
 
 
